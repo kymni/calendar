@@ -19,3 +19,9 @@ input {
 .yr-select {
   text-align: center;
 }
+.popup-table {
+  width: 100%;
+}
+.popup-table-color-cell {
+  width: 10%;
+}

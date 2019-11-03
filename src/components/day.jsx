@@ -15,9 +15,22 @@ class Day extends Component {
 
   render() {
     const { date } = this.props;
+    let textColor = "";
+    if (
+      (this.props.dayIndex === 0 || this.props.dayIndex === 6) &&
+      !this.state.category
+    ) {
+      textColor = { color: "#2c95c9" };
+    } else {
+      textColor = { color: "black" };
+    }
     return (
       <td style={this.state.categories[this.state.category]}>
-        <div className="date-cell" onClick={this.handleModalShow}>
+        <div
+          style={textColor}
+          className="date-cell"
+          onClick={this.handleModalShow}
+        >
           {date > 0 ? date : ""}
         </div>
         <Modal
@@ -31,7 +44,7 @@ class Day extends Component {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <table style={{ width: "100%" }}>
+            <table className="popup-table">
               <tbody>
                 <tr>
                   <td>
@@ -44,7 +57,7 @@ class Day extends Component {
                     />
                     <label htmlFor="none">No category</label>
                   </td>
-                  <td width="10%"></td>
+                  <td className="popup-table-color-cell"></td>
                 </tr>
                 {Object.keys(this.state.categories).map(cat => {
                   return (

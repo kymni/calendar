@@ -34,6 +34,7 @@ class Month extends Component {
                         this.props.year
                       }
                       date={day}
+                      dayIndex={i}
                       month={this.props.month}
                       year={this.props.year}
                     />
