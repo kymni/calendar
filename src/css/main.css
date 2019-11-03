@@ -1,0 +1,21 @@
+.calendar-table caption {
+  caption-side: top;
+  margin: 0 auto;
+  text-align: center;
+}
+.date-cell {
+  cursor: pointer;
+  text-align: center;
+}
+input {
+  margin: 0.4rem;
+}
+.prv-btn {
+  float: left;
+}
+.nxt-btn {
+  float: right;
+}
+.yr-select {
+  text-align: center;
+}
