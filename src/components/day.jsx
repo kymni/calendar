@@ -31,30 +31,40 @@ class Day extends Component {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <div>
-              <input
-                type="radio"
-                id="none"
-                value=""
-                checked={this.state.category === ""}
-                onChange={this.handleCategoryChange}
-              />
-              <label htmlFor="none">No category</label>
-            </div>
-            {Object.keys(this.state.categories).map(cat => {
-              return (
-                <div key={cat}>
-                  <input
-                    type="radio"
-                    id={cat}
-                    value={cat}
-                    checked={this.state.category === cat}
-                    onChange={this.handleCategoryChange}
-                  />
-                  <label htmlFor={cat}>{cat}</label>
-                </div>
-              );
-            })}
+            <table style={{ width: "100%" }}>
+              <tbody>
+                <tr>
+                  <td>
+                    <input
+                      type="radio"
+                      id="none"
+                      value=""
+                      checked={this.state.category === ""}
+                      onChange={this.handleCategoryChange}
+                    />
+                    <label htmlFor="none">No category</label>
+                  </td>
+                  <td width="10%"></td>
+                </tr>
+                {Object.keys(this.state.categories).map(cat => {
+                  return (
+                    <tr key={cat}>
+                      <td>
+                        <input
+                          type="radio"
+                          id={cat}
+                          value={cat}
+                          checked={this.state.category === cat}
+                          onChange={this.handleCategoryChange}
+                        />
+                        <label htmlFor={cat}>{cat}</label>
+                      </td>
+                      <td style={this.state.categories[cat]}></td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={this.handleModalClose}>
